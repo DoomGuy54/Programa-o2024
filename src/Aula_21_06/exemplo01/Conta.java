@@ -29,7 +29,7 @@ public class Conta {
     }
 
     void geraIdentificador(){
-        String identificador = " ";
+        String identificador = "";
         Random aleatorio = new Random();
 
         for(int i=0; i<4; i++){
