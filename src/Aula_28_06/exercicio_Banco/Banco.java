@@ -18,12 +18,19 @@ public class Banco {
     }
 
     public static ContaCorrente acessaCC(ContaCorrente c1){
-        //Aqui vai teu código
+        /*do{
+            System.out.println("Precione 1 para depositar: ");
+            System.out.println("Precione 2 para depositar: ");
+            System.out.println("Precione 3 para sacar");
+        }
+        while();*/
+
+        c1 = new ContaCorrente("João", "1234", 100);
         return c1;
-    }
+    };
 
     public static ContaPoupanca acessaCP(ContaPoupanca c1){
-        //Aqui vai o código
+        c1 = new ContaPoupanca("João","1234",150);
         return c1;
     }
     public static void main (String[] args) {
