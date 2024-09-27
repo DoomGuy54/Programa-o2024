@@ -18,6 +18,9 @@ public class Lista<T> {
     }
 
     //Método que pesquisa e diz se existe ou não
+
+    //OPC 1
+    //return posicaoDe(elemento) !=-1
     public boolean contem (T elemento){
         for(int i=0; i<tamanho; i++)
             if(elementos[i].equals(elemento))
@@ -26,7 +29,38 @@ public class Lista<T> {
     }
 
     //Método que remove o elemento pelo elemento
+    public boolean remove(T elemento){
+        int posicao = posicaoDe(elemento);
+        if (posicao != -1){
+            remove(posicao);
+            return true;
+        }
+        return false;
+    }
 
+    //Limpar lista
+    public void limpar(){
+        tamanho = 0;
+    }
+
+    //Tamanho lista
+    public int tamanho(){
+        return tamanho;
+    }
+
+    //Está vazia
+    public boolean estaVazia(){
+        return tamanho==0;
+    }
+
+    //Ultima posicao
+    public int ultimaPosicaoDe(T elemento){
+        int posicao = -1;
+        for(int i=0; i<tamanho;i++)
+            if(elementos[i].equals(elemento))
+                return i;
+        return posicao;
+    }
 
 
     public void adiciona(T elemento){
