@@ -12,7 +12,9 @@ public class Paciente {
     private LocalDate dataNascimento;
     private ArrayList<Atendimento> atendimentos;
 
-    public Paciente(){
+    public Paciente(String nome, String sobrenome){
+        this.nome = nome;
+        this.sobrenome = sobrenome;
         atendimentos = new ArrayList<Atendimento>();
     }
 
@@ -57,8 +59,9 @@ public class Paciente {
     public String toString(){
         String retorno = "Nome: "+nome+" "+sobrenome;
         DateTimeFormatter formatoBr = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        String data = formatoBr.format(this.dataNascimento);
-        retorno += "Data de nascimento: "+data;
+        System.out.println(dataNascimento);
+        //String data = formatoBr.format(this.dataNascimento);
+        //retorno += "Data de nascimento: "+ data;
         retorno += "Idade: "+getIdade();
         return retorno;
     }
