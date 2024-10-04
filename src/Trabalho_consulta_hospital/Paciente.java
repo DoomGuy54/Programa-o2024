@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class Paciente {
     private String nome;
@@ -12,9 +11,10 @@ public class Paciente {
     private LocalDate dataNascimento;
     private ArrayList<Atendimento> atendimentos;
 
-    public Paciente(String nome, String sobrenome){
-        this.nome = nome;
-        this.sobrenome = sobrenome;
+    public Paciente(){
+        //this.nome = nome;
+        //this.sobrenome = sobrenome;
+        //this.dataNascimento = dataNascimento;
         atendimentos = new ArrayList<Atendimento>();
     }
 
@@ -60,8 +60,8 @@ public class Paciente {
         String retorno = "Nome: "+nome+" "+sobrenome;
         DateTimeFormatter formatoBr = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         System.out.println(dataNascimento);
-        //String data = formatoBr.format(this.dataNascimento);
-        //retorno += "Data de nascimento: "+ data;
+        String data = formatoBr.format(this.dataNascimento);
+        retorno += "Data de nascimento: "+ data;
         retorno += "Idade: "+getIdade();
         return retorno;
     }
